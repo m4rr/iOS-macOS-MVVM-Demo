@@ -25,7 +25,6 @@
 		9703F32023FFC64E00CE3E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9703F31E23FFC64E00CE3E92 /* Main.storyboard */; };
 		9703F32223FFC65800CE3E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9703F32123FFC65800CE3E92 /* Assets.xcassets */; };
 		9703F32523FFC65800CE3E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9703F32323FFC65800CE3E92 /* LaunchScreen.storyboard */; };
-		9703F32D23FFCCDB00CE3E92 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9703F32C23FFCCDB00CE3E92 /* README.md */; };
 		977407CA241976E500CA1D48 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977407C9241976E500CA1D48 /* PhotoInfo.swift */; };
 		977407CC2419772500CA1D48 /* PixbAPINetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977407CB2419772500CA1D48 /* PixbAPINetworkClient.swift */; };
 		97DF2AE9241A35C200C33394 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DF2AE8241A35C200C33394 /* PhotoDetailsViewController.swift */; };
@@ -216,7 +215,6 @@
 				97DF2AED241A3C6600C33394 /* PhotoDetailTableViewCell.xib in Resources */,
 				9703F32523FFC65800CE3E92 /* LaunchScreen.storyboard in Resources */,
 				9703F32223FFC65800CE3E92 /* Assets.xcassets in Resources */,
-				9703F32D23FFCCDB00CE3E92 /* README.md in Resources */,
 				9703F32023FFC64E00CE3E92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
