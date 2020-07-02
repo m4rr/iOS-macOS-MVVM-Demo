@@ -13,7 +13,7 @@
         <!--Photo Lib-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="PhotosListViewController" storyboardIdentifier="PhotosListViewController" id="BYZ-38-t0r" customClass="PhotosListViewController" customModule="PhotoLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PhotosListViewController" storyboardIdentifier="PhotosListViewController" id="BYZ-38-t0r" customClass="PhotosListViewController" customModule="PhotoLib" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,14 +28,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCell" reuseIdentifier="PhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-vb-AaB" customClass="PhotoCell" customModule="PhotoLibrary" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCell" reuseIdentifier="PhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-vb-AaB" customClass="PhotoCell" customModule="PhotoLib" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="182" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HJc-o0-Ilt">
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbB-rO-60D" customClass="ShadowView" customModule="PhotoLibrary" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbB-rO-60D" customClass="ShadowView" customModule="PhotoLib" customModuleProvider="target">
                                                     <rect key="frame" x="102" y="10" width="70" height="70"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aEQ-vs-868">
@@ -124,6 +124,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yia-HD-MhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DVW-wF-boE"/>
                             <constraint firstAttribute="bottom" secondItem="yia-HD-MhK" secondAttribute="bottom" id="Fu7-sQ-yCQ"/>
