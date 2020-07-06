@@ -52,7 +52,7 @@ class PixbAPINetworkClient {
     }.resume()
   }
 
-  func fetchImage(on urlString: String, completion: @escaping (Result<ShImage, APIError>) -> Void) -> URLSessionDataTask? {
+  func fetchImage(on urlString: String, completion: @escaping (Result<PlatformImage, APIError>) -> Void) -> URLSessionDataTask? {
     guard let url = URL(string: urlString) else {
       completion(.failure(.failedToCreateURL))
       return nil
@@ -63,7 +63,7 @@ class PixbAPINetworkClient {
         completion(.failure(.networkError(error: error, response: response)))
       }
 
-      if let image = jsonData.flatMap(ShImage.init(data:)) {
+      if let image = jsonData.flatMap(PlatformImage.init(data:)) {
         completion(.success(image))
       } else {
         let decodingError = NSError(domain: "com.photoLib.NetworkClient", code: -1, userInfo: nil)

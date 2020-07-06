@@ -7,23 +7,21 @@
 
 #if os(iOS)
 import UIKit
-typealias ShImage = UIImage
-typealias ShColor = UIColor
+typealias PlatformImage = UIImage
 #elseif os(macOS)
 import AppKit
-typealias ShImage = NSImage
-typealias ShColor = NSColor
+typealias PlatformImage = NSImage
 #endif
 
 class Dependencies {
 
   let client: PixbAPINetworkClient
   let photos: PhotosServiceProtocol
-  let cache: NSCache<PhotoCacheKey, ShImage>
+  let cache: NSCache<PhotoCacheKey, PlatformImage>
 
   init() {
     client = PixbAPINetworkClient()
-    cache = NSCache<PhotoCacheKey, ShImage>()
+    cache = NSCache<PhotoCacheKey, PlatformImage>()
     photos = PhotosService(client: client, cache: cache)
   }
 }

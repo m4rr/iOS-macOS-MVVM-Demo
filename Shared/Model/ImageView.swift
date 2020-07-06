@@ -9,12 +9,14 @@ import SwiftUI
 
 public struct ImageView: View {
 
-  // keeps object in memory
-  @ObservedObject var image: FetchImage
+  @ObservedObject // keeps object in memory
+  var image: FetchImage
 
   public var body: some View {
     ZStack {
-      Rectangle().fill(Color.gray)
+      Rectangle()
+        .fill(bgColor)
+
       image.view?
         .resizable()
         .aspectRatio(contentMode: .fill)
@@ -30,9 +32,9 @@ final class FetchImage: ObservableObject, Identifiable {
 
   let url: String
 
-  @Published  private(set) var image: ShImage?
-  @Published  private(set) var error: Error?
-  @Published  private(set) var isLoading: Bool = false
+  @Published private(set) var image: PlatformImage?
+  @Published private(set) var error: Error?
+  @Published private(set) var isLoading: Bool = false
 
   deinit {
     cancel()
@@ -64,7 +66,7 @@ final class FetchImage: ObservableObject, Identifiable {
     })
   }
 
-  private func didFinishRequest(result: ShImage?) {
+  private func didFinishRequest(result: PlatformImage?) {
     if let result = result {
       isLoading = false
       image = result
