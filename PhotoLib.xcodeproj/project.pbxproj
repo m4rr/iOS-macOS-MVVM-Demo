@@ -12,6 +12,12 @@
 		0303496E24AB5DB700AD60D0 /* PhotosListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0303496D24AB5DB700AD60D0 /* PhotosListViewModel.swift */; };
 		0303497124AB5E7700AD60D0 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0303497024AB5E7600AD60D0 /* PhotosService.swift */; };
 		030C39B724AB7235001E284E /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C39B624AB7235001E284E /* PhotoCellViewModel.swift */; };
+		0333405424B3270D00B133D4 /* PhotoLibSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333404224B3270C00B133D4 /* PhotoLibSwiftUIApp.swift */; };
+		0333405524B3270D00B133D4 /* PhotoLibSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333404224B3270C00B133D4 /* PhotoLibSwiftUIApp.swift */; };
+		0333405624B3270D00B133D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333404324B3270C00B133D4 /* ContentView.swift */; };
+		0333405724B3270D00B133D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333404324B3270C00B133D4 /* ContentView.swift */; };
+		0333405824B3270D00B133D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0333404424B3270D00B133D4 /* Assets.xcassets */; };
+		0333405924B3270D00B133D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0333404424B3270D00B133D4 /* Assets.xcassets */; };
 		0335610E24ADEF4B0088A948 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335610D24ADEF4B0088A948 /* UIStoryboard.swift */; };
 		0342C88024AB685800848233 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342C87F24AB685800848233 /* PhotoDetailsViewModel.swift */; };
 		0342C88224AB6E2900848233 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342C88124AB6E2900848233 /* PhotoCell.swift */; };
@@ -38,6 +44,14 @@
 		0303496D24AB5DB700AD60D0 /* PhotosListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewModel.swift; sourceTree = "<group>"; };
 		0303497024AB5E7600AD60D0 /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
 		030C39B624AB7235001E284E /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
+		0333404224B3270C00B133D4 /* PhotoLibSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibSwiftUIApp.swift; sourceTree = "<group>"; };
+		0333404324B3270C00B133D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0333404424B3270D00B133D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0333404924B3270D00B133D4 /* PhotoLibSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLibSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0333404B24B3270D00B133D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0333405024B3270D00B133D4 /* PhotoLibSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLibSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0333405224B3270D00B133D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0333405324B3270D00B133D4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		0335610D24ADEF4B0088A948 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		0342C87F24AB685800848233 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
 		0342C88124AB6E2900848233 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -62,6 +76,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0333404624B3270D00B133D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0333404D24B3270D00B133D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9703F31223FFC64E00CE3E92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,6 +110,33 @@
 				0357199E24AB990C0015A29F /* ShadowView.swift */,
 			);
 			path = PhotosList;
+			sourceTree = "<group>";
+		};
+		0333404124B3270C00B133D4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0333404224B3270C00B133D4 /* PhotoLibSwiftUIApp.swift */,
+				0333404324B3270C00B133D4 /* ContentView.swift */,
+				0333404424B3270D00B133D4 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0333404A24B3270D00B133D4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0333404B24B3270D00B133D4 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		0333405124B3270D00B133D4 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				0333405224B3270D00B133D4 /* Info.plist */,
+				0333405324B3270D00B133D4 /* macOS.entitlements */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 		0335610C24ADEF360088A948 /* Extensions */ = {
@@ -110,6 +165,9 @@
 			children = (
 				9703F32C23FFCCDB00CE3E92 /* README.md */,
 				9703F31723FFC64E00CE3E92 /* PhotoLib */,
+				0333404124B3270C00B133D4 /* Shared */,
+				0333404A24B3270D00B133D4 /* iOS */,
+				0333405124B3270D00B133D4 /* macOS */,
 				9703F31623FFC64E00CE3E92 /* Products */,
 			);
 			indentWidth = 2;
@@ -120,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				9703F31523FFC64E00CE3E92 /* PhotoLib.app */,
+				0333404924B3270D00B133D4 /* PhotoLibSwiftUI.app */,
+				0333405024B3270D00B133D4 /* PhotoLibSwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +217,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0333404824B3270D00B133D4 /* iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0333405E24B3270D00B133D4 /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildPhases = (
+				0333404524B3270D00B133D4 /* Sources */,
+				0333404624B3270D00B133D4 /* Frameworks */,
+				0333404724B3270D00B133D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOS;
+			productName = iOS;
+			productReference = 0333404924B3270D00B133D4 /* PhotoLibSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0333404F24B3270D00B133D4 /* macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0333405F24B3270D00B133D4 /* Build configuration list for PBXNativeTarget "macOS" */;
+			buildPhases = (
+				0333404C24B3270D00B133D4 /* Sources */,
+				0333404D24B3270D00B133D4 /* Frameworks */,
+				0333404E24B3270D00B133D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macOS;
+			productName = macOS;
+			productReference = 0333405024B3270D00B133D4 /* PhotoLibSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9703F31423FFC64E00CE3E92 /* PhotoLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9703F32923FFC65800CE3E92 /* Build configuration list for PBXNativeTarget "PhotoLib" */;
@@ -180,10 +274,16 @@
 		9703F30D23FFC64D00CE3E92 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
+					0333404824B3270D00B133D4 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					0333404F24B3270D00B133D4 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					9703F31423FFC64E00CE3E92 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -203,11 +303,29 @@
 			projectRoot = "";
 			targets = (
 				9703F31423FFC64E00CE3E92 /* PhotoLib */,
+				0333404824B3270D00B133D4 /* iOS */,
+				0333404F24B3270D00B133D4 /* macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0333404724B3270D00B133D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0333405824B3270D00B133D4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0333404E24B3270D00B133D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0333405924B3270D00B133D4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9703F31323FFC64E00CE3E92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +340,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0333404524B3270D00B133D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0333405624B3270D00B133D4 /* ContentView.swift in Sources */,
+				0333405424B3270D00B133D4 /* PhotoLibSwiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0333404C24B3270D00B133D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0333405724B3270D00B133D4 /* ContentView.swift in Sources */,
+				0333405524B3270D00B133D4 /* PhotoLibSwiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9703F31123FFC64E00CE3E92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +406,97 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0333405A24B3270D00B133D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.m4rr.PhotoLibSwiftUI;
+				PRODUCT_NAME = PhotoLibSwiftUI;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0333405B24B3270D00B133D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.m4rr.PhotoLibSwiftUI;
+				PRODUCT_NAME = PhotoLibSwiftUI;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0333405C24B3270D00B133D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m4rr.PhotoLibSwiftUI;
+				PRODUCT_NAME = PhotoLibSwiftUI;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0333405D24B3270D00B133D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m4rr.PhotoLibSwiftUI;
+				PRODUCT_NAME = PhotoLibSwiftUI;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		9703F32723FFC65800CE3E92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,6 +653,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0333405E24B3270D00B133D4 /* Build configuration list for PBXNativeTarget "iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0333405A24B3270D00B133D4 /* Debug */,
+				0333405B24B3270D00B133D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0333405F24B3270D00B133D4 /* Build configuration list for PBXNativeTarget "macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0333405C24B3270D00B133D4 /* Debug */,
+				0333405D24B3270D00B133D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9703F31023FFC64D00CE3E92 /* Build configuration list for PBXProject "PhotoLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
