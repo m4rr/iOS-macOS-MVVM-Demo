@@ -1,8 +1,10 @@
-# iOS-MVVM-Practice
+# iOS/macOS MVVM Demo App
 
-Example iOS Photo Listing API app using MVVM architecture.
+Example UIKit/SwiftUI Photo Lib app, built using MVVM architecture.
 
 ## Notes
+
+<img src=demo@2x.jpg align=right width=450>
 
 - MVVM architecture 
 - Swift 5, deployment target - iOS 13
