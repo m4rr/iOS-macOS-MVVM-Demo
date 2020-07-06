@@ -14,6 +14,9 @@ import UIKit
 let bgColor = Color(.tertiarySystemGroupedBackground)
 let itemMinWidth: CGFloat = 160
 
+/// non-SwiftUI App's tint color
+let windowTintColor = UIColor.systemGray
+
 #elseif os(macOS)
 
 import AppKit
@@ -29,5 +32,3 @@ let apiURL = "https://pixa" + "bay.com" + "/api/"
 /// Pixb Key
 let apiKey = "15333185-" + (Bundle.main.object(forInfoDictionaryKey: "KEY") as? String ?? "no___key")
 
-/// App's tint color
-let windowTintColor = UIColor.systemGray
