@@ -10,7 +10,7 @@ import Combine
 
 struct DataItem: Identifiable {
     var id = UUID()
-    var text: String
+    var info: PhotoInfo
 }
 
 private let imageWidth: CGFloat = 80
@@ -22,10 +22,7 @@ private let deps = Dependencies()
 
 struct ContentView: View {
 
-  @State private var data: [DataItem] = ["1123123 12 312", "2", "3333", "44444 4", "5555555555555555", "1123123 12 312", "2", "3333", "44444 4"]
-    .map {
-      DataItem(text: $0)
-    }
+  @State private var data: [DataItem] = []
 
   let gridItem = GridItem(.flexible(minimum: 150, maximum: 300),
                           spacing: outSpacing)
@@ -46,14 +43,14 @@ struct ContentView: View {
               HStack(alignment: .firstTextBaseline) { // user label
                 Image(systemName: "person")
                   .frame(width: iconWidth, height: iconWidth)
-                Text(row.text)
+                Text(row.info.user)
               }
               .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
 
               HStack(alignment: .firstTextBaseline) { // tags label
                 Image(systemName: "tag")
                   .frame(width: iconWidth, height: iconWidth)
-                Text(row.text)
+                Text(row.info.tags)
               }
               .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
 
@@ -83,7 +80,18 @@ struct ContentView: View {
     }
     .frame(width: 400, height: 400)
     .onAppear {
-      deps.client.fetchImageList(for: <#T##String#>, completion: <#T##(Result<[PhotoInfo], APIError>) -> Void#>)
+      deps.photos.topPopular(query: "cars") { result in
+        switch result {
+        case .success(let photos):
+          data = photos.map {
+            DataItem(info: $0)
+          }
+        case .failure(let err):
+          // FIXME: err
+          ()
+
+        }
+      }
     }
   }
 //  .navigationBarTitle("Navigation")

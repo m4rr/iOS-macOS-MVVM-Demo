@@ -15,7 +15,7 @@ import AppKit
 let apiURL = "https://pixa" + "bay.com" + "/api/"
 
 /// Pixb Key
-let apiKey = "15333185-" + (Bundle.main.object(forInfoDictionaryKey: "KEY") as? String ?? "no key")
+let apiKey = "15333185-" + (Bundle.main.object(forInfoDictionaryKey: "KEY") as? String ?? "no___key")
 
 /// App's tint color
 let windowTintColor = ShColor.systemGray
