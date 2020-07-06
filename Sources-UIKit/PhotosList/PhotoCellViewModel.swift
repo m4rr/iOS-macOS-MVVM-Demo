@@ -25,7 +25,7 @@ class PhotoCellViewModel {
     self.photoInfo = photoInfo
   }
 
-  func fetchImage(completion handler: @escaping (ShImage?) -> Void) {
+  func fetchImage(completion handler: @escaping (UIImage?) -> Void) {
     photos.fetchImage(url: photoInfo.previewURL, completion: handler)
   }
 
