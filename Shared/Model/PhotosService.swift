@@ -5,13 +5,17 @@
 //  Created by Marat Saytakov on 6/30/20.
 //
 
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 protocol PhotosServiceProtocol {
   
   func topPopular(query: String, completion handler: @escaping (Result<[PhotoInfo], APIError>) -> Void)
   
-  func fetchImage(url: String, completion handler: @escaping (UIImage?) -> Void)
+  func fetchImage(url: String, completion handler: @escaping (ShImage?) -> Void)
 
   func cancelFetching(url: String)
 }
@@ -19,10 +23,10 @@ protocol PhotosServiceProtocol {
 class PhotosService: PhotosServiceProtocol {
   
   private let client: PixbAPINetworkClient
-  private let cache: NSCache<PhotoCacheKey, UIImage>
+  private let cache: NSCache<PhotoCacheKey, ShImage>
   private var fetchingTasks: [String: URLSessionDataTask] = [:]
 
-  init(client: PixbAPINetworkClient, cache: NSCache<PhotoCacheKey, UIImage>) {
+  init(client: PixbAPINetworkClient, cache: NSCache<PhotoCacheKey, ShImage>) {
     self.client = client
     self.cache = cache
   }
@@ -35,7 +39,7 @@ class PhotosService: PhotosServiceProtocol {
     fetchingTasks.removeValue(forKey: url)?.cancel()
   }
 
-  func fetchImage(url: String, completion handler: @escaping (UIImage?) -> Void) {
+  func fetchImage(url: String, completion handler: @escaping (ShImage?) -> Void) {
 
     let cacheKey = PhotoCacheKey(key: url)
     

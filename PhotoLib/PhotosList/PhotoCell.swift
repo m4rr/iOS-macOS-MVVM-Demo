@@ -42,7 +42,7 @@ class PhotoCell: UICollectionViewCell {
   
   @IBOutlet weak var authorLabel: UILabel!
   @IBOutlet weak var photoIdLabel: UILabel!
-  @IBOutlet weak var imageView: UIImageView! {
+  @IBOutlet weak var imageView: ShImageView! {
     didSet {
       imageView.clipsToBounds = true
       imageView.layer.cornerCurve = .continuous

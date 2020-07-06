@@ -5,7 +5,11 @@
 //  Created by Marat Saytakov on 6/30/20.
 //
 
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 enum APIError: Swift.Error {
   case objectWasUnexpectedlyDeallocated
@@ -48,7 +52,7 @@ class PixbAPINetworkClient {
     }.resume()
   }
 
-  func fetchImage(on urlString: String, completion: @escaping (Result<UIImage, APIError>) -> Void) -> URLSessionDataTask? {
+  func fetchImage(on urlString: String, completion: @escaping (Result<ShImage, APIError>) -> Void) -> URLSessionDataTask? {
     guard let url = URL(string: urlString) else {
       completion(.failure(.failedToCreateURL))
       return nil
@@ -59,7 +63,7 @@ class PixbAPINetworkClient {
         completion(.failure(.networkError(error: error, response: response)))
       }
 
-      if let image = jsonData.flatMap(UIImage.init(data:)) {
+      if let image = jsonData.flatMap(ShImage.init(data:)) {
         completion(.success(image))
       } else {
         let decodingError = NSError(domain: "com.photoLib.NetworkClient", code: -1, userInfo: nil)

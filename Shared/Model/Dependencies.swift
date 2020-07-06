@@ -5,17 +5,25 @@
 //  Created by Marat Saytakov on 6/30/20.
 //
 
+#if os(iOS)
 import UIKit
+typealias ShImage = UIImage
+typealias ShColor = UIColor
+#elseif os(macOS)
+import AppKit
+typealias ShImage = NSImage
+typealias ShColor = NSColor
+#endif
 
 class Dependencies {
 
   let client: PixbAPINetworkClient
   let photos: PhotosServiceProtocol
-  let cache: NSCache<PhotoCacheKey, UIImage>
+  let cache: NSCache<PhotoCacheKey, ShImage>
 
   init() {
     client = PixbAPINetworkClient()
-    cache = NSCache<PhotoCacheKey, UIImage>()
+    cache = NSCache<PhotoCacheKey, ShImage>()
     photos = PhotosService(client: client, cache: cache)
   }
 }

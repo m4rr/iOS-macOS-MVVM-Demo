@@ -26,6 +26,18 @@
 		03887A8224ABC7CC00358EF9 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03887A8124ABC7CC00358EF9 /* PhotoCollection.swift */; };
 		03887A8424ABC91500358EF9 /* PhotoDetailsTansitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03887A8324ABC91500358EF9 /* PhotoDetailsTansitioningDelegate.swift */; };
 		03887A8624ABC92900358EF9 /* PhotoDetailsPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03887A8524ABC92900358EF9 /* PhotoDetailsPresentationController.swift */; };
+		03D2FB4024B355D6001C2573 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0303497024AB5E7600AD60D0 /* PhotosService.swift */; };
+		03D2FB4124B355D6001C2573 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977407C9241976E500CA1D48 /* PhotoInfo.swift */; };
+		03D2FB4224B355D6001C2573 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03809DFF24ADFAE600332540 /* Constants.swift */; };
+		03D2FB4324B355D6001C2573 /* PixbAPINetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977407CB2419772500CA1D48 /* PixbAPINetworkClient.swift */; };
+		03D2FB4424B355D6001C2573 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0303496A24AB5CC200AD60D0 /* Dependencies.swift */; };
+		03D2FB4524B355D6001C2573 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03887A8124ABC7CC00358EF9 /* PhotoCollection.swift */; };
+		03D2FB4624B355D7001C2573 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0303497024AB5E7600AD60D0 /* PhotosService.swift */; };
+		03D2FB4724B355D7001C2573 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977407C9241976E500CA1D48 /* PhotoInfo.swift */; };
+		03D2FB4824B355D7001C2573 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03809DFF24ADFAE600332540 /* Constants.swift */; };
+		03D2FB4924B355D7001C2573 /* PixbAPINetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977407CB2419772500CA1D48 /* PixbAPINetworkClient.swift */; };
+		03D2FB4A24B355D7001C2573 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0303496A24AB5CC200AD60D0 /* Dependencies.swift */; };
+		03D2FB4B24B355D7001C2573 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03887A8124ABC7CC00358EF9 /* PhotoCollection.swift */; };
 		9703F31923FFC64E00CE3E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703F31823FFC64E00CE3E92 /* AppDelegate.swift */; };
 		9703F31D23FFC64E00CE3E92 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703F31C23FFC64E00CE3E92 /* PhotosListViewController.swift */; };
 		9703F32023FFC64E00CE3E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9703F31E23FFC64E00CE3E92 /* Main.storyboard */; };
@@ -115,6 +127,7 @@
 		0333404124B3270C00B133D4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				03887A8024ABC7A500358EF9 /* Model */,
 				0333404224B3270C00B133D4 /* PhotoLibSwiftUIApp.swift */,
 				0333404324B3270C00B133D4 /* ContentView.swift */,
 				0333404424B3270D00B133D4 /* Assets.xcassets */,
@@ -189,7 +202,6 @@
 			children = (
 				0303496C24AB5D5C00AD60D0 /* PhotosList */,
 				97DF2AE7241A35A900C33394 /* PhotoDetails */,
-				03887A8024ABC7A500358EF9 /* Model */,
 				0335610C24ADEF360088A948 /* Extensions */,
 				9703F31823FFC64E00CE3E92 /* AppDelegate.swift */,
 				0303496824AB5C7400AD60D0 /* Router.swift */,
@@ -344,7 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D2FB4424B355D6001C2573 /* Dependencies.swift in Sources */,
+				03D2FB4224B355D6001C2573 /* Constants.swift in Sources */,
+				03D2FB4324B355D6001C2573 /* PixbAPINetworkClient.swift in Sources */,
+				03D2FB4124B355D6001C2573 /* PhotoInfo.swift in Sources */,
 				0333405624B3270D00B133D4 /* ContentView.swift in Sources */,
+				03D2FB4024B355D6001C2573 /* PhotosService.swift in Sources */,
+				03D2FB4524B355D6001C2573 /* PhotoCollection.swift in Sources */,
 				0333405424B3270D00B133D4 /* PhotoLibSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D2FB4A24B355D7001C2573 /* Dependencies.swift in Sources */,
+				03D2FB4824B355D7001C2573 /* Constants.swift in Sources */,
+				03D2FB4924B355D7001C2573 /* PixbAPINetworkClient.swift in Sources */,
+				03D2FB4724B355D7001C2573 /* PhotoInfo.swift in Sources */,
 				0333405724B3270D00B133D4 /* ContentView.swift in Sources */,
+				03D2FB4624B355D7001C2573 /* PhotosService.swift in Sources */,
+				03D2FB4B24B355D7001C2573 /* PhotoCollection.swift in Sources */,
 				0333405524B3270D00B133D4 /* PhotoLibSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

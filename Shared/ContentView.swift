@@ -18,6 +18,8 @@ private let iconWidth: CGFloat = 8
 private let inSpacing: CGFloat = 10
 private let outSpacing: CGFloat = 5
 
+private let deps = Dependencies()
+
 struct ContentView: View {
 
   @State private var data: [DataItem] = ["1123123 12 312", "2", "3333", "44444 4", "5555555555555555", "1123123 12 312", "2", "3333", "44444 4"]
@@ -80,6 +82,9 @@ struct ContentView: View {
       .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, outSpacing)
     }
     .frame(width: 400, height: 400)
+    .onAppear {
+      deps.client.fetchImageList(for: <#T##String#>, completion: <#T##(Result<[PhotoInfo], APIError>) -> Void#>)
+    }
   }
 //  .navigationBarTitle("Navigation")
 }
