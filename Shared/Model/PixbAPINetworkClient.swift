@@ -35,7 +35,7 @@ class PixbAPINetworkClient {
   func fetchImageList(for query: String, completion: @escaping (Result<[PhotoInfo], APIError>) -> Void) {
 
     let imageType = "photo"
-    let pageSize = 100
+    let pageSize = 101
 
     guard let url = composeURL(["key": apiKey, "q": query, "image_type": imageType, "per_page": String(pageSize)]) else {
       completion(.failure(.failedToCreateURL))

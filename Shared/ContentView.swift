@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 struct DataItem: Identifiable {
-    var id = UUID()
-    var info: PhotoInfo
+  var id = UUID()
+  var info: PhotoInfo
 }
 
 private let imageWidth: CGFloat = 80
@@ -38,10 +38,12 @@ struct ContentView: View {
 
           HStack(alignment: .top) { // cell
 
-            VStack(alignment: .leading) { // leftish text block
+            // left-ish text block
+            VStack(alignment: .leading, spacing: outSpacing) {
 
               HStack(alignment: .firstTextBaseline) { // user label
                 Image(systemName: "person")
+                  .resizable()
                   .frame(width: iconWidth, height: iconWidth)
                 Text(row.info.user)
               }
@@ -49,36 +51,37 @@ struct ContentView: View {
 
               HStack(alignment: .firstTextBaseline) { // tags label
                 Image(systemName: "tag")
+                  .resizable()
                   .frame(width: iconWidth, height: iconWidth)
                 Text(row.info.tags)
               }
               .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
 
             }
-            .padding(.all, 10)
+            .padding(.all, inSpacing)
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: imageWidth + (inSpacing * 2), alignment: .topLeading)
 
-            Image("sampleImage") // big image
-              .resizable()
-              .aspectRatio(contentMode: .fill)
+            // right-ish image block
+            ImageView(image: FetchImage(url: row.info.previewURL, deps.photos))
               .frame(width: imageWidth, height: imageWidth)
-              .cornerRadius(10)
+              .cornerRadius(7)
               .clipped(antialiased: true)
-              .shadow(color: Color(.black), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+              .shadow(color: Color(.black), radius: 10)
               .padding([.trailing, .top, .bottom], inSpacing)
 
           }
           .background(Color(.darkGray))
-          .cornerRadius(15)
+          .cornerRadius(11)
           .clipped(antialiased: true)
-//          .onTapGesture {
-//            fatalError()
-//          }
+          //          .onTapGesture {
+          //            fatalError()
+          //          }
         }
       }
       .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, outSpacing)
     }
-    .frame(width: 400, height: 400)
+    .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity,
+           minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .topLeading)
     .onAppear {
       deps.photos.topPopular(query: "cars") { result in
         switch result {
@@ -94,12 +97,13 @@ struct ContentView: View {
       }
     }
   }
-//  .navigationBarTitle("Navigation")
+  //  .navigationBarTitle("Navigation")
 }
 
 struct ContentView_Previews: PreviewProvider {
 
   static var previews: some View {
     ContentView()
+      .frame(width: 500, height: 300, alignment: .center)
   }
 }

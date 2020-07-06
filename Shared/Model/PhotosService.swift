@@ -58,7 +58,7 @@ class PhotosService: PhotosServiceProtocol {
           handler(image)
         }
         
-      case .failure(_):
+      case .failure(let err):
         DispatchQueue.main.async {
           handler(nil)
         }
