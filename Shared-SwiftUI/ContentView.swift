@@ -11,8 +11,10 @@ struct ContentView: View {
 
   private(set) var deps: Dependencies
 
-  @State private var data: [DataItem] = []
+  @State private var data: [PhotoInfo] = []
   @State private var isLoading: Bool = true
+  @State private var isDetailsPresented: Bool = false
+
 
   let gridItem = GridItem(.adaptive(minimum: itemMinWidth, maximum: itemMinWidth * 2),
                           spacing: outerSpace)
@@ -30,14 +32,17 @@ struct ContentView: View {
 
           LazyVGrid(columns: [gridItem], spacing: outerSpace) {
 
-            ForEach(data) { row in
+            ForEach(data, id: \.id) { row in
 
-//              NavigationLink(destination: PhotoDetailsView(viewModel: .init())) {
-                PhotoItemView(viewModel: .init(info: row.info, deps.photos))
-//              }
-              //.onTapGesture {
-              //  fatalError()
-              //}
+              PhotoItemView(viewModel: .init(info: row, deps.photos))
+                .sheet(isPresented: $isDetailsPresented, onDismiss: {
+                  // on dismiss
+                }, content: {
+                  PhotoDetailsView(viewModel: .init(photoInfo: row))
+                })
+                .onTapGesture {
+                  isDetailsPresented.toggle()
+                }
 
             }
 
@@ -54,9 +59,7 @@ struct ContentView: View {
 
           switch result {
           case .success(let photos):
-            data = photos.map {
-              DataItem(info: $0)
-            }
+            data = photos
           case .failure(let err):
             // FIXME: err
             ()

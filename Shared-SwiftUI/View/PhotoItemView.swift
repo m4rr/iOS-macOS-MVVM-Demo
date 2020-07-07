@@ -15,17 +15,20 @@ struct PhotoItemView: View {
 
     ZStack {
 
-      Rectangle() // squircle background to not clip shadow
+      // squircle background to not clip shadow
+      Rectangle()
         .fill(bgColor)
         .cornerRadius(11)
         .clipped()
 
-      HStack(alignment: .top) { // cell content
+      // cell content
+      HStack(alignment: .top) {
 
         // left-ish text block
         VStack(alignment: .leading, spacing: innerSpace) {
 
-          HStack(alignment: .firstTextBaseline, spacing: innerSpace) { // user label
+          // user label
+          HStack(alignment: .firstTextBaseline, spacing: innerSpace) {
             Image(systemName: "person.fill")
               .frame(width: iconWidth, height: iconWidth)
             Text(viewModel.mainLabelText)
@@ -33,7 +36,8 @@ struct PhotoItemView: View {
           .font(.caption)
           .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
 
-          HStack(alignment: .firstTextBaseline) { // tags label
+          // tags label
+          HStack(alignment: .firstTextBaseline) {
             Image(systemName: "tag")
               .frame(width: iconWidth, height: iconWidth)
             Text(viewModel.secondLabelText)

@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 typealias PhotoDetailsCellInfo = (title: String, value: String)
+
+//struct PhotoDetailsCellInfo {
+//  let title: String, value: String
+//}
 
 private let nf = NumberFormatter()
 
@@ -44,8 +49,8 @@ class PhotoDetailsViewModel {
     tableData[indexPath.row]
   }
 
-  func titleForHeaderInSection(_ section: Int) -> String? {
-    "Details"
+  func titleForHeaderInSection(_ section: Int) -> String {
+    "Details".uppercased()
   }
 
 }
