@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhotoDetailsView: View {
 
-  @State var isPresented = false
+  @Binding var isPresented: Bool
 
   var viewModel: PhotoDetailsViewModel
 
@@ -24,7 +24,6 @@ struct PhotoDetailsView: View {
       }
       .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 14)
 
-
       List(viewModel.tableData, id: \.title) { item in
         HStack {
           Text(item.title)
@@ -35,6 +34,9 @@ struct PhotoDetailsView: View {
 
     }
     .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+    .onTapGesture {
+      isPresented.toggle()
+    }
   }
 
 }

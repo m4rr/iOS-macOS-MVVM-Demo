@@ -38,7 +38,7 @@ struct ContentView: View {
                 .sheet(isPresented: $isDetailsPresented, onDismiss: {
                   // on dismiss
                 }, content: {
-                  PhotoDetailsView(viewModel: .init(photoInfo: row))
+                  PhotoDetailsView(isPresented: $isDetailsPresented, viewModel: .init(photoInfo: row))
                 })
                 .onTapGesture {
                   isDetailsPresented.toggle()
