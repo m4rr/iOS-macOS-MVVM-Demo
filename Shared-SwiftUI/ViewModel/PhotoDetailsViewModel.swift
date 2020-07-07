@@ -5,4 +5,8 @@
 //  Created by Marat Say on 7/7/20.
 //
 
-import Foundation
+import SwiftUI
+
+final class PhotoDetailsViewModel: ObservableObject {
+  
+}

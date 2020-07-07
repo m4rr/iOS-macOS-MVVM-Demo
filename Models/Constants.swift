@@ -32,3 +32,7 @@ let apiURL = "https://pixa" + "bay.com" + "/api/"
 /// Pixb Key
 let apiKey = "15333185-" + (Bundle.main.object(forInfoDictionaryKey: "KEY") as? String ?? "no___key")
 
+let photoWidth: CGFloat = 80
+let iconWidth: CGFloat = 8
+let innerSpace: CGFloat = 8
+let outerSpace: CGFloat = 7

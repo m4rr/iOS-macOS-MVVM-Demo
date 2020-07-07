@@ -6,93 +6,49 @@
 //
 
 import SwiftUI
-import Combine
-
-struct DataItem: Identifiable {
-  var id = UUID()
-  var info: PhotoInfo
-}
-
-private let imageWidth: CGFloat = 80
-private let iconWidth: CGFloat = 10
-private let inSpacing: CGFloat = 10
-private let outSpacing: CGFloat = 5
-
-private let deps = Dependencies()
 
 struct ContentView: View {
+
+  private(set) var deps: Dependencies
 
   @State private var data: [DataItem] = []
   @State private var isLoading: Bool = true
 
-  let gridItem = GridItem(.adaptive(minimum: itemMinWidth,
-                                    maximum: itemMinWidth * 2),
-                          spacing: outSpacing)
+  let gridItem = GridItem(.adaptive(minimum: itemMinWidth, maximum: itemMinWidth * 2),
+                          spacing: outerSpace)
 
   var body: some View {
 
-    ZStack {
+    NavigationView {
 
-      ProgressView()
-        .opacity(isLoading ? 1 : 0)
+      ZStack {
 
-      ScrollView {
+        ProgressView()
+          .opacity(isLoading ? 1 : 0)
 
-        LazyVGrid(columns: [gridItem],
-                  spacing: outSpacing) {
+        ScrollView {
 
-          ForEach(data) { row in
+          LazyVGrid(columns: [gridItem], spacing: outerSpace) {
 
-            HStack(alignment: .top) { // cell
+            ForEach(data) { row in
 
-              // left-ish text block
-              VStack(alignment: .leading, spacing: outSpacing) {
-
-                HStack(alignment: .firstTextBaseline) { // user label
-                  Image(systemName: "person.fill")
-//                    .resizable()
-                    .frame(width: iconWidth, height: iconWidth)
-                  Text(row.info.user)
-                }
-                .font(.caption)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
-
-                HStack(alignment: .firstTextBaseline) { // tags label
-                  Image(systemName: "tag")
-//                    .resizable()
-                    .frame(width: iconWidth, height: iconWidth)
-                  Text(row.info.tags)
-                }
-                .font(.caption2)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .topLeading)
-
-              }
-              .padding(.all, inSpacing)
-              .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: imageWidth + (inSpacing * 2), alignment: .topLeading)
-
-              // right-ish image block
-              ImageView(image: FetchImage(url: row.info.previewURL, deps.photos))
-                .frame(width: imageWidth, height: imageWidth)
-                .cornerRadius(7)
-                .clipped()
-                //              .clipShape(ContainerRelativeShape())
-                .shadow(color: Color(.black), radius: 10)
-                .padding([.trailing, .top, .bottom], inSpacing)
+//              NavigationLink(destination: PhotoDetailsView(viewModel: .init())) {
+                PhotoItemView(viewModel: .init(info: row.info, deps.photos))
+//              }
+              //.onTapGesture {
+              //  fatalError()
+              //}
 
             }
-            .background(bgColor)
-            .cornerRadius(11)
-            .clipped()
-            //          .onTapGesture {
-            //            fatalError()
-            //          }
-          }
-        }
-        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, outSpacing)
-      }}
-      .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity,
-             minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .topLeading)
-      .onAppear {
+
+          } // LazyVGrid
+          .padding(.all, outerSpace)
+
+        } // ScrollView
+
+      } // ZStack
+      .navigationTitle("Photo Lib")
+      .onAppear(perform: {
         deps.photos.topPopular(query: "cars") { result in
           isLoading = false
 
@@ -106,14 +62,19 @@ struct ContentView: View {
             ()
           }
         }
-      }
+      }) // onAppear
+
+    } // NavigationView
+    .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity,
+           minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
+
   }
-  //.navigationBarTitle("Navigation")
+
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
-      .frame(width: 500, height: 300, alignment: .center)
+    ContentView(deps: Dependencies())
+//      .frame(width: 1080/2, height: 1980/2, alignment: .center)
   }
 }

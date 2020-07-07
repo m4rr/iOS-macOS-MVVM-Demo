@@ -31,14 +31,7 @@ public struct ImageView: View {
 final class FetchImage: ObservableObject, Identifiable {
 
   let url: String
-
-  @Published private(set) var image: PlatformImage?
-  @Published private(set) var error: Error?
-  @Published private(set) var isLoading: Bool = false
-
-  deinit {
-    cancel()
-  }
+  let photoService: PhotosServiceProtocol?
 
   init(url: String, _ service: PhotosServiceProtocol) {
     self.url = url
@@ -47,7 +40,13 @@ final class FetchImage: ObservableObject, Identifiable {
     self.fetch()
   }
 
-  let photoService: PhotosServiceProtocol?
+  deinit {
+    cancel()
+  }
+
+  @Published private(set) var image: PlatformImage?
+  @Published private(set) var error: Error?
+  @Published private(set) var isLoading: Bool = false
 
   func fetch() {
     guard !isLoading else {
@@ -80,6 +79,7 @@ final class FetchImage: ObservableObject, Identifiable {
     photoService?.cancelFetching(url: url)
     isLoading = false
   }
+
 }
 
 extension FetchImage {
