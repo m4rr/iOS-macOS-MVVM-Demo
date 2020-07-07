@@ -5,7 +5,6 @@
 //  Created by Marat Saytakov on 6/30/20.
 //
 
-import Foundation
 import SwiftUI
 
 typealias PhotoDetailsCellInfo = (title: String, value: String)
@@ -45,12 +44,20 @@ class PhotoDetailsViewModel {
     tableData.count
   }
 
-  func cellTexts(at indexPath: IndexPath) -> PhotoDetailsCellInfo {
-    tableData[indexPath.row]
-  }
-
   func titleForHeaderInSection(_ section: Int) -> String {
     "Details".uppercased()
   }
 
 }
+
+#if !os(macOS)
+import UIKit
+
+extension PhotoDetailsViewModel {
+
+  func cellTexts(at indexPath: IndexPath) -> PhotoDetailsCellInfo {
+    tableData[indexPath.row]
+  }
+
+}
+#endif

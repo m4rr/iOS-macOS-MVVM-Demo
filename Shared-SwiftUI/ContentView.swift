@@ -15,6 +15,7 @@ struct ContentView: View {
   @State private var isLoading: Bool = true
   @State private var isDetailsPresented: Bool = false
 
+  @State var selectedItem: PhotoInfo?
 
   let gridItem = GridItem(.adaptive(minimum: itemMinWidth, maximum: itemMinWidth * 2),
                           spacing: outerSpace)
@@ -34,15 +35,22 @@ struct ContentView: View {
 
             ForEach(data, id: \.id) { row in
 
+              #if os(macOS)
               PhotoItemView(viewModel: .init(info: row, deps.photos))
+                .onTapGesture {
+                  selectedItem = row
+                }
+              #else
+              PhotoItemView(viewModel: .init(info: row, deps.photos))
+                .onTapGesture {
+                  isDetailsPresented.toggle()
+                }
                 .sheet(isPresented: $isDetailsPresented, onDismiss: {
                   // on dismiss
                 }, content: {
                   PhotoDetailsView(isPresented: $isDetailsPresented, viewModel: .init(photoInfo: row))
                 })
-                .onTapGesture {
-                  isDetailsPresented.toggle()
-                }
+              #endif
 
             }
 
@@ -52,6 +60,8 @@ struct ContentView: View {
         } // ScrollView
 
       } // ZStack
+      .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity,
+             minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
       .navigationTitle("Photo Lib")
       .onAppear(perform: {
         deps.photos.topPopular(query: "cars") { result in
@@ -67,9 +77,20 @@ struct ContentView: View {
         }
       }) // onAppear
 
+      #if os(macOS)
+      if let selectedItem = selectedItem {
+
+        PhotoDetailsView(isPresented: $isDetailsPresented,
+                       viewModel: .init(photoInfo: selectedItem))
+      } else {
+        //
+      }
+      #endif
+
     } // NavigationView
-    .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity,
-           minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
+    .navigationViewStyle(DefaultNavigationViewStyle())
+//    .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity,
+//           minHeight: 300, idealHeight: 500, maxHeight: .infinity, alignment: .center)
 
   }
 
