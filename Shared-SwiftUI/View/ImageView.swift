@@ -22,8 +22,8 @@ public struct ImageView: View {
         .aspectRatio(contentMode: .fill)
     }
     .animation(.easeIn(duration: 0.15))
-//    .onAppear(perform: image.fetch)
-//    .onDisappear(perform: image.cancel)
+    .onAppear(perform: image.fetch)
+    .onDisappear(perform: image.cancel)
   }
 
 }
