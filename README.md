@@ -1,10 +1,17 @@
 # iOS/macOS MVVM Demo App
 
-Example UIKit/SwiftUI Photo Lib app, built using MVVM architecture.
-
 <img src=demo@2x.jpg align=right width=450>
-
 &nbsp;
+
+Example UIKit/SwiftUI Photo Lib app, built using MVVM architecture. 
+
+Xcode project contains 3 targets:
+
+- `PhotoLib` -- a UIKit iOS app
+- `iOS` -- a SwiftUI iOS app
+- `macOS` -- a SwiftUI macOS app
+
+All targets share same business logic.
 
 ## Some Highlights
 
@@ -17,6 +24,10 @@ Example UIKit/SwiftUI Photo Lib app, built using MVVM architecture.
 - Safe Area support
 - No 3rd party frameworks
 - Crash free
+
+## Lisense
+
+MIT
 
 ## Author
 
