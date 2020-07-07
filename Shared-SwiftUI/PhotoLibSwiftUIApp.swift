@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct PhotoLibSwiftUIApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView(deps: Dependencies())
     }
+  }
 }
 
 struct PhotoLibSwiftUIApp_Previews: PreviewProvider {
